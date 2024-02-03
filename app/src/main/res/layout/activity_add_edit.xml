@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ui.add_edit.AddEditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:textSize="18sp"
+            android:textColor="@color/base_color"
+            android:textAlignment="center"
+            android:layout_marginHorizontal="8dp"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:textSize="18sp"
+            android:textColor="@color/base_color"
+            android:textAlignment="textEnd"
+            android:layout_marginHorizontal="8dp"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="8dp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginVertical="32dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@color/base_color"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_information"
+                android:textSize="18sp"
+                android:textColor="?attr/colorText"
+                android:textAlignment="textEnd"
+                android:layout_marginHorizontal="16dp"
+                android:textStyle="bold"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginVertical="8dp"
+                android:background="?attr/colorText"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_fist_name"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/first_name"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="?attr/colorText"
+                    android:textAlignment="textStart"/>
+
+                <EditText
+                    android:id="@+id/input_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="no"
+                    android:padding="8dp"
+                    android:hint="@string/first_name"
+                    android:textSize="14sp"
+                    android:labelFor="@id/tv_fist_name"
+                    android:inputType="textPersonName"
+                    android:background="@drawable/input_text"
+                    tools:ignore="LabelFor" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="16dp"
+                android:background="?attr/colorText"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_last_name"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/last_name"
+                    android:textSize="16sp"
+                    android:textColor="?attr/colorText"
+                    android:textAlignment="textStart"
+                    android:layout_marginEnd="16dp"/>
+
+                <EditText
+                    android:id="@+id/input_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:hint="@string/last_name"
+                    android:labelFor="@id/tv_last_name"
+                    android:inputType="textPersonName"
+                    android:background="@drawable/input_text"
+                    android:importantForAutofill="no"
+                    tools:ignore="LabelFor" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="16dp"
+                android:background="?attr/colorText"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_information"
+                android:textSize="18sp"
+                android:layout_marginVertical="20dp"
+                android:textColor="?attr/colorText"
+                android:textAlignment="textEnd"
+                android:layout_marginHorizontal="16dp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="?attr/colorText"
+                    android:textAlignment="textStart"/>
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:hint="@string/email"
+                    android:autofillHints="emailAddress"
+                    android:labelFor="@id/tv_fist_name"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/input_text"
+                    tools:ignore="LabelFor" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="16dp"
+                android:background="?attr/colorText"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_dob"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dob"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="?attr/colorText"
+                    android:textAlignment="textStart"/>
+
+                <TextView
+                    android:id="@+id/input_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="no"
+                    android:padding="6dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_your_dob"
+                    android:background="@drawable/input_text"
+                    app:drawableTint="?attr/colorText"
+                    app:drawableRightCompat="@drawable/ic_calendar" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

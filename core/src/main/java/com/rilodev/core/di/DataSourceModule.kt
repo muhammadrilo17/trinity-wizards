@@ -1,5 +1,6 @@
 package com.rilodev.core.di
 
+import android.content.Context
 import com.rilodev.core.data.source.local.LocalDataSource
 import com.rilodev.core.data.source.local.room.AppDao
 import com.rilodev.core.data.source.remote.RemoteDataSource
@@ -7,6 +8,7 @@ import com.rilodev.core.data.source.remote.network.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -23,8 +25,9 @@ class DataSourceModule {
     @Provides
     fun provideRemoteDataSource(
         apiService: ApiService,
-        dispatcher: CoroutineDispatcher
-    ): RemoteDataSource = RemoteDataSource(apiService, dispatcher)
+        dispatcher: CoroutineDispatcher,
+        @ApplicationContext context: Context
+    ): RemoteDataSource = RemoteDataSource(apiService, dispatcher, context)
 
     @Singleton
     @Provides

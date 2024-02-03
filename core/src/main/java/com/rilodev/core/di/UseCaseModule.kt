@@ -2,7 +2,7 @@ package com.rilodev.core.di
 
 import com.rilodev.core.domain.repositories.IAppRepositories
 import com.rilodev.core.domain.usecase.AppUseCase
-import com.rilodev.core.domain.usecase.GetDataUseCase
+import com.rilodev.core.domain.usecase.GetPersonUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +18,7 @@ class UseCaseModule {
         repositories: IAppRepositories
     ): AppUseCase {
         return AppUseCase(
-            getDataUseCase = GetDataUseCase(repositories),
+            getPersonUseCase = GetPersonUseCase(repositories),
         )
     }
 }

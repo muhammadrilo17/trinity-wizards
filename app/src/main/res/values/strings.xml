@@ -4,4 +4,15 @@
     <string name="no">No</string>
     <string name="yes">Yes</string>
     <string name="close">Close</string>
+    <string name="contacts">Contacts</string>
+    <string name="add_button">add button</string>
+    <string name="search_button">search button</string>
+    <string name="cancel">Cancel</string>
+    <string name="main_information">Main Information</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="dob">DOB</string>
+    <string name="save">Save</string>
+    <string name="select_your_dob">Select your dob</string>
 </resources>

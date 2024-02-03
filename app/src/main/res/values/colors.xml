@@ -6,4 +6,6 @@
 
     <color name="text_dark">#E0E0E0</color>
     <color name="text_light">#333333</color>
+
+    <color name="base_color">#ff8c00</color>
 </resources>

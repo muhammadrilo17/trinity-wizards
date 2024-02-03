@@ -3,9 +3,9 @@ package com.rilodev.core.data.repositories
 import com.rilodev.core.data.source.local.LocalDataSource
 import com.rilodev.core.data.source.remote.RemoteDataSource
 import com.rilodev.core.data.source.remote.network.ApiResponse
-import com.rilodev.core.domain.model.DataModel
+import com.rilodev.core.domain.model.PersonModel
 import com.rilodev.core.domain.repositories.IAppRepositories
-import com.rilodev.core.helpers.mapper.DataMapper
+import com.rilodev.core.helpers.mapper.PersonMapper
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -13,13 +13,12 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-
 class AppRepositories @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val dispatcher: CoroutineDispatcher,
 ): IAppRepositories {
-    override fun getData(): Flow<Resource<List<DataModel>>> {
+    override fun getData(): Flow<Resource<List<PersonModel>>> {
         return flow {
             emit(Resource.Loading())
 
@@ -28,7 +27,7 @@ class AppRepositories @Inject constructor(
                     is ApiResponse.Success -> {
                         val response = apiResponse.data
                         val data =
-                            response.map { DataMapper.responseToModel(it) }.toList()
+                            response.map { PersonMapper.responseToModel(it) }.toList()
                         emit(Resource.Success(data))
                     }
 
@@ -41,6 +40,7 @@ class AppRepositories @Inject constructor(
                     }
                 }
             } catch (e: Exception) {
+                e.printStackTrace()
                 emit(Resource.Error(e.message ?: "An error occurred"))
             }
         }

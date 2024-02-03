@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.rilodev.trinitywizards.utils.CustomDialog
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.reflect.KClass
 
 abstract class BaseActivity<VB: ViewBinding, VM : ViewModel>(
